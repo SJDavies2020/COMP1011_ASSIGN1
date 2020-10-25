@@ -1,7 +1,6 @@
 .label
 {
     -fx-text-fill: yellow;
-    -fx-font-style: bold;
 }
 .anchor {
     -fx-background-image:url('./assets/chaosium-background-the-library.png');
