@@ -1,11 +1,9 @@
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
-import static java.util.Arrays.asList;
+import java.sql.SQLException;
 import org.apache.commons.lang3.*;
 
 public class Charmodel {
 
+    private int raceID;
     private String charRace;
     private int totalFighter;
     private int totalRogue;
@@ -21,8 +19,8 @@ public class Charmodel {
     private int totalDruid;
 
 
-public void characterModel(String chrRac, int totFighter, int totRogue,int totWizard,int totBarbarian,int totCleric,int totRanger,int totPaladin,int totWarlock,int totMonk,int totBard,int totSorcerer,int totDruid)
-{
+public Charmodel(String chrRac, int totFighter, int totRogue, int totWizard, int totBarbarian, int totCleric, int totRanger, int totPaladin, int totWarlock, int totMonk, int totBard, int totSorcerer, int totDruid) throws SQLException {
+
     setCharRace(chrRac);
     setTotalFighter(totFighter);
     setTotalRogue(totRogue);
@@ -37,7 +35,17 @@ public void characterModel(String chrRac, int totFighter, int totRogue,int totWi
     setTotalSorcerer(totSorcerer);
     setTotalDruid(totDruid);
 
+    raceID = DBUtil.insertNewCharacterRace(this);
+
 }
+
+    public int getRaceID() {
+        return raceID;
+    }
+
+    public void setRaceID(int raceID) {
+        this.raceID = raceID;
+    }
 
     public String getCharRace() {return charRace;
     }

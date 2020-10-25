@@ -5,14 +5,6 @@ public class DBUtil {
 private static String user="stevendavies";
 private static String password="Bonnied029$";
 
-
-    /**
-     * This method will write a new line to the DataBase and return the CharId
-     * @param newCharacter
-     * @return charId (Primary ID from the DB Table)
-     */
-
-
 public static int insertNewCharacterRace(Charmodel newCharacterRace) throws SQLException {
 
     Connection conn = null;
