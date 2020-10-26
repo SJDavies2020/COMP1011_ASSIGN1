@@ -68,6 +68,6 @@
          </font>
       </Label>
       <Button layoutX="624.0" layoutY="456.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="123.0" text="Add Race to DB" />
-      <Button layoutX="758.0" layoutY="456.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="123.0" text="Show Graphs" />
+      <Button layoutX="758.0" layoutY="456.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="123.0" style="-fx-border-radius: 10;" text="Show Graphs" />
    </children>
 </AnchorPane>

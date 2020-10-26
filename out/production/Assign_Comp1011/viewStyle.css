@@ -1,0 +1,18 @@
+.label
+{
+    -fx-text-fill: yellow;
+}
+.anchor {
+    -fx-background-image:url('./assets/chaosium-background-the-library.png');
+}
+
+.gridPane
+{
+    -fx-background-color: rgba(119,136,153,.7);
+}
+
+.title
+{
+    -fx-text-fill: yellow;
+}
+
