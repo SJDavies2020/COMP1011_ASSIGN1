@@ -18,6 +18,26 @@ public class Charmodel {
     private String totalSorcerer;
     private String totalDruid;
 
+
+    public Charmodel(int raceID, String charRace, String totalFighter, String totalRogue, String totalWizard, String totalBarbarian, String totalCleric, String totalRanger, String totalPaladin, String totalWarlock, String totalMonk, String totalBard, String totalSorcerer, String totalDruid) {
+
+        setRaceID(raceID);
+        setCharRace(charRace);
+        setTotalFighter(totalFighter);
+        setTotalRogue(totalRogue);
+        setTotalWizard(totalWizard);
+        setTotalBarbarian(totalBarbarian);
+        setTotalCleric(totalCleric);
+        setTotalRanger(totalRanger);
+        setTotalPaladin(totalPaladin);
+        setTotalWarlock(totalWarlock);
+        setTotalMonk(totalMonk);
+        setTotalBard(totalBard);
+        setTotalSorcerer(totalSorcerer);
+        setTotalDruid(totalDruid);
+
+    }
+
     /**
      * The Method will write to the Database when called.
      * @param chrRac
@@ -26,7 +46,7 @@ public class Charmodel {
      * @param totWizard
      * @param totBarbarian
      * @param totCleric
-     * @param totRangeri
+     * @param totRanger
      * @param totPaladin
      * @param totWarlock
      * @param totMonk
@@ -35,6 +55,8 @@ public class Charmodel {
      * @param totDruid
      * @throws SQLException
      */
+
+
 
 public Charmodel(String chrRac, String totFighter, String totRogue, String totWizard, String totBarbarian, String totCleric, String totRanger,String totPaladin, String totWarlock, String totMonk, String totBard, String totSorcerer, String totDruid) throws SQLException {
 
@@ -68,8 +90,10 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     public String getCharRace() {return charRace;
     }
     public void setCharRace(String charRac) {
-        if (charRac.matches("[A-z]")) {
-            this.charRace = charRac;}
+        if (charRac.matches("[A-z]*")) {
+            this.charRace = charRac;
+
+        }
         else{
              throw new IllegalArgumentException("Input must only be text!");
             }

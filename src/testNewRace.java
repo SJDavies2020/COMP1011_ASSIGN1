@@ -1,4 +1,4 @@
-import java.sql.SQLException;
+/*import java.sql.SQLException;
 public class testNewRace {
     public static void main(String[] args) {
         try{
@@ -9,4 +9,4 @@ public class testNewRace {
             e.printStackTrace();
         }
     }
-}
+}*/

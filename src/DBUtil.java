@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DBUtil {
 // User Name and Password
@@ -113,5 +114,53 @@ public static int insertNewCharacterRace(Charmodel newCharacterRace) throws SQLE
 
 }
 
+public static ArrayList<Charmodel> getAllCharInfo() throws SQLException {
+
+    ArrayList<Charmodel> charactersStats = new ArrayList<>();
+
+    Connection conn = null;
+    Statement statement = null;
+    ResultSet resultSet = null;
+
+    try {
+
+        // 1 Define the Connection String
+        conn = DriverManager.getConnection("jdbc:mysql://107.180.0.227:3306/Comp1011_Assign1", user, password);
+        // 2 Create the SQL Command to Retrieve Data
+        statement = conn.createStatement();
+        // 3 Execute the SQL to get the data and place in the resultSet
+        resultSet = statement.executeQuery("SELECT * FROM tblCharsStat");
+        int fetchSize = resultSet.getFetchSize();
+        // 4 Loop over Data (12 Rows make up 1 Object)
+        for (int b = 1; b >= fetchSize / 12; b++) {
+            ArrayList<String> arrlist = new ArrayList<String>(13);
+            arrlist.add(resultSet.getString("race"));
+            for (int i = 1; i < 13; i++) {
+                arrlist.add(resultSet.getString(String.valueOf("number")));
+                resultSet.next();
+            }
+            Charmodel newCharCharacter = new Charmodel(arrlist.get(1), arrlist.get(2), arrlist.get(3), arrlist.get(4), arrlist.get(5), arrlist.get(6), arrlist.get(7), arrlist.get(8), arrlist.get(9), arrlist.get(10), arrlist.get(11), arrlist.get(12), arrlist.get(13));
+            resultSet.next();
+        }
+
+    } catch (SQLException e)
+    {
+
+    }finally {
+        if (conn != null)
+        {
+            conn.close();
+        }
+        if (statement != null)
+        {
+            statement.close();
+        }
+        if (resultSet !=null)
+        {
+            resultSet.close();
+        }
+        return charactersStats;
+    }
+}
 
 }

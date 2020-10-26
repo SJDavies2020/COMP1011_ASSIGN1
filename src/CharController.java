@@ -3,6 +3,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class CharController implements Initializable {
@@ -53,11 +54,18 @@ public class CharController implements Initializable {
     @FXML
     private TextField totalSorcerers;
 
+    @FXML
+    private Label msgArea;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
+    /**
+     * Create the New Character Race - Reacts to Button Push
+     *
+     */
     public void createNewCharacter()
     {
         try{
@@ -76,9 +84,10 @@ public class CharController implements Initializable {
                     totalSorcerers.getText(),
                     totalDruids.getText());
             System.out.println("The New Race ID is: " + newRace.getRaceID());
+            msgArea.setText("Added to Database Successfully!");
         }catch (SQLException e)
         {
-            e.printStackTrace();
+            msgArea.setText(e.toString());
         }
     }
 
