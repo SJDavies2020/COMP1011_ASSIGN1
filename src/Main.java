@@ -15,7 +15,7 @@ public class Main extends Application {
         try {
             ArrayList<Charmodel> characters = DBUtil.getAllCharInfo();
 
-            for(Charmodel character : characters)
+            for(Charmodel character: characters)
             {
                 System.out.println(character);
             }

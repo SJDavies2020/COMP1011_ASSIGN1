@@ -90,9 +90,8 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     public String getCharRace() {return charRace;
     }
     public void setCharRace(String charRac) {
-        if (charRac.matches("[A-z]*")) {
+        if (charRac.matches("^[a-zA-Z0-9_.-]*$")) {
             this.charRace = charRac;
-
         }
         else{
              throw new IllegalArgumentException("Input must only be text!");
@@ -104,7 +103,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalFighter(String totalFighter) {
-        if (totalFighter.matches("[0-9]")) {
+        if (totalFighter.matches("^[0-9]*[1-9][0-9]*$")) {
         this.totalFighter = totalFighter;
         }
         else{
@@ -118,7 +117,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalRogue(String totalRogue) {
-        if (totalRogue.matches("[0-9]")) {
+        if (totalRogue.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalRogue = totalRogue;
         }
         else{
@@ -131,7 +130,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalWizard(String totalWizard) {
-        if (totalWizard.matches("[0-9]")) {
+        if (totalWizard.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalWizard = totalWizard;
         }
         else{
@@ -145,7 +144,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalBarbarian(String totalBarbarian) {
-        if (totalBarbarian.matches("[0-9]")) {
+        if (totalBarbarian.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalBarbarian = totalBarbarian;
         }
         else{
@@ -159,7 +158,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalCleric(String totalCleric) {
-        if (totalCleric.matches("[0-9]")) {
+        if (totalCleric.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalCleric = totalCleric;
         }
         else{
@@ -173,7 +172,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalRanger(String totalRanger) {
-        if (totalRanger.matches("[0-9]")) {
+        if (totalRanger.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalRanger = totalRanger;
         }
         else{
@@ -187,7 +186,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalPaladin(String totalPaladin) {
-        if (totalPaladin.matches("[0-9]")) {
+        if (totalPaladin.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalPaladin = totalPaladin;
         }
         else{
@@ -201,7 +200,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalWarlock(String totalWarlock) {
-        if (totalWarlock.matches("[0-9]")) {
+        if (totalWarlock.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalWarlock = totalWarlock;
         }
         else{
@@ -215,7 +214,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalMonk(String totalMonk) {
-        if (totalMonk.matches("[0-9]")) {
+        if (totalMonk.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalMonk = totalMonk;
         }
         else{
@@ -229,7 +228,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalBard(String  totalBard) {
-        if (totalBard.matches("[0-9]")) {
+        if (totalBard.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalBard = totalBard;
         }
         else{
@@ -243,7 +242,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalSorcerer(String  totalSorcerer) {
-        if (totalSorcerer.matches("[0-9]")) {
+        if (totalSorcerer.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalSorcerer = totalSorcerer;
         }
         else{
@@ -257,7 +256,7 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     }
 
     public void setTotalDruid(String  totalDruid) {
-        if (totalDruid.matches("[0-9]")) {
+        if (totalDruid.matches("^[0-9]*[1-9][0-9]*$")) {
             this.totalDruid = totalDruid;
         }
         else{

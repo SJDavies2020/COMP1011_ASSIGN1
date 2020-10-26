@@ -1,5 +1,6 @@
 import java.sql.*;
 import java.util.ArrayList;
+import java.sql.ResultSet;
 
 public class DBUtil {
 // User Name and Password
@@ -127,26 +128,42 @@ public static ArrayList<Charmodel> getAllCharInfo() throws SQLException {
         // 1 Define the Connection String
         conn = DriverManager.getConnection("jdbc:mysql://107.180.0.227:3306/Comp1011_Assign1", user, password);
         // 2 Create the SQL Command to Retrieve Data
-        statement = conn.createStatement();
-        // 3 Execute the SQL to get the data and place in the resultSet
+
+        statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        // 3 Execute the SQL to get the data and place in
+
+        ResultSet rs = statement.executeQuery("SELECT * FROM tblCharsStat");
+
+        rs.last();
+
+        int totalRowsResult = rs.getRow() / 12 ;
+
         resultSet = statement.executeQuery("SELECT * FROM tblCharsStat");
-        int fetchSize = resultSet.getFetchSize();
         // 4 Loop over Data (12 Rows make up 1 Object)
-        for (int b = 1; b >= fetchSize / 12; b++) {
+        resultSet.first();
+
+
+        for (int b = 1; b <= totalRowsResult ; b++)
+        {
             ArrayList<String> arrlist = new ArrayList<String>(13);
+
+            arrlist.add(resultSet.getString(String.valueOf("iCharsStatId")));
             arrlist.add(resultSet.getString("race"));
-            for (int i = 1; i < 13; i++) {
+
+            for (int i = 0; i < 12; i++) {
                 arrlist.add(resultSet.getString(String.valueOf("number")));
                 resultSet.next();
             }
-            Charmodel newCharCharacter = new Charmodel(arrlist.get(1), arrlist.get(2), arrlist.get(3), arrlist.get(4), arrlist.get(5), arrlist.get(6), arrlist.get(7), arrlist.get(8), arrlist.get(9), arrlist.get(10), arrlist.get(11), arrlist.get(12), arrlist.get(13));
-            resultSet.next();
+            Charmodel newCharCharacter = new Charmodel(Integer.parseInt(arrlist.get(0)), arrlist.get(1) , arrlist.get(2), arrlist.get(3), arrlist.get(4), arrlist.get(5), arrlist.get(6), arrlist.get(7), arrlist.get(8), arrlist.get(9), arrlist.get(10), arrlist.get(11), arrlist.get(12),arrlist.get(13));
+            charactersStats.add(newCharCharacter);
         }
 
-    } catch (SQLException e)
+    }
+    catch(SQLException e)
     {
-
-    }finally {
+        e.printStackTrace();
+    }
+    finally {
         if (conn != null)
         {
             conn.close();
@@ -162,5 +179,16 @@ public static ArrayList<Charmodel> getAllCharInfo() throws SQLException {
         return charactersStats;
     }
 }
-
+    public static int getRows(ResultSet res){
+        int totalRows = 0;
+        try {
+            res.last();
+            totalRows = res.getRow();
+            res.beforeFirst();
+        }
+        catch(Exception ex)  {
+            return 0;
+        }
+        return totalRows ;
+    }
 }
