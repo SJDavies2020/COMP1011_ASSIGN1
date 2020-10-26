@@ -5,21 +5,38 @@ public class Charmodel {
 
     private int raceID;
     private String charRace;
-    private int totalFighter;
-    private int totalRogue;
-    private int totalWizard;
-    private int totalBarbarian;
-    private int totalCleric;
-    private int totalRanger;
-    private int totalPaladin;
-    private int totalWarlock;
-    private int totalMonk;
-    private int totalBard;
-    private int totalSorcerer;
-    private int totalDruid;
+    private String totalFighter;
+    private String totalRogue;
+    private String totalWizard;
+    private String totalBarbarian;
+    private String totalCleric;
+    private String totalRanger;
+    private String totalPaladin;
+    private String totalWarlock;
+    private String totalMonk;
+    private String totalBard;
+    private String totalSorcerer;
+    private String totalDruid;
 
+    /**
+     * The Method will write to the Database when called.
+     * @param chrRac
+     * @param totFighter
+     * @param totRogue
+     * @param totWizard
+     * @param totBarbarian
+     * @param totCleric
+     * @param totRangeri
+     * @param totPaladin
+     * @param totWarlock
+     * @param totMonk
+     * @param totBard
+     * @param totSorcerer
+     * @param totDruid
+     * @throws SQLException
+     */
 
-public Charmodel(String chrRac, int totFighter, int totRogue, int totWizard, int totBarbarian, int totCleric, int totRanger, int totPaladin, int totWarlock, int totMonk, int totBard, int totSorcerer, int totDruid) throws SQLException {
+public Charmodel(String chrRac, String totFighter, String totRogue, String totWizard, String totBarbarian, String totCleric, String totRanger,String totPaladin, String totWarlock, String totMonk, String totBard, String totSorcerer, String totDruid) throws SQLException {
 
     setCharRace(chrRac);
     setTotalFighter(totFighter);
@@ -44,112 +61,184 @@ public Charmodel(String chrRac, int totFighter, int totRogue, int totWizard, int
     }
 
     public void setRaceID(int raceID) {
+
         this.raceID = raceID;
     }
 
     public String getCharRace() {return charRace;
     }
     public void setCharRace(String charRac) {
-        if (StringUtils.isNumeric(charRac)) {
-            throw new IllegalArgumentException("Input must only be text!");
-        } else {
-            this.charRace = charRac;
-        }
+        if (charRac.matches("[A-z]")) {
+            this.charRace = charRac;}
+        else{
+             throw new IllegalArgumentException("Input must only be text!");
+            }
     }
 
-    public int getTotalFighter() {
-        return totalFighter;
+    public String getTotalFighter() {
+            return totalFighter;
     }
 
-    public void setTotalFighter(int totalFighter) {
+    public void setTotalFighter(String totalFighter) {
+        if (totalFighter.matches("[0-9]")) {
         this.totalFighter = totalFighter;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalRogue() {
+    public String getTotalRogue() {
         return totalRogue;
     }
 
-    public void setTotalRogue(int totalRogue) {
-        this.totalRogue = totalRogue;
+    public void setTotalRogue(String totalRogue) {
+        if (totalRogue.matches("[0-9]")) {
+            this.totalRogue = totalRogue;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
     }
 
-    public int getTotalWizard() {
+    public String getTotalWizard() {
         return totalWizard;
     }
 
-    public void setTotalWizard(int totalWizard) {
-        this.totalWizard = totalWizard;
+    public void setTotalWizard(String totalWizard) {
+        if (totalWizard.matches("[0-9]")) {
+            this.totalWizard = totalWizard;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalBarbarian() {
+    public String getTotalBarbarian() {
         return totalBarbarian;
     }
 
-    public void setTotalBarbarian(int totalBarbarian) {
-        this.totalBarbarian = totalBarbarian;
+    public void setTotalBarbarian(String totalBarbarian) {
+        if (totalBarbarian.matches("[0-9]")) {
+            this.totalBarbarian = totalBarbarian;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalCleric() {
+    public String getTotalCleric() {
         return totalCleric;
     }
 
-    public void setTotalCleric(int totalCleric) {
-        this.totalCleric = totalCleric;
+    public void setTotalCleric(String totalCleric) {
+        if (totalCleric.matches("[0-9]")) {
+            this.totalCleric = totalCleric;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalRanger() {
+    public String getTotalRanger() {
         return totalRanger;
     }
 
-    public void setTotalRanger(int totalRanger) {
-        this.totalRanger = totalRanger;
+    public void setTotalRanger(String totalRanger) {
+        if (totalRanger.matches("[0-9]")) {
+            this.totalRanger = totalRanger;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalPaladin() {
+    public String getTotalPaladin() {
         return totalPaladin;
     }
 
-    public void setTotalPaladin(int totalPaladin) {
-        this.totalPaladin = totalPaladin;
+    public void setTotalPaladin(String totalPaladin) {
+        if (totalPaladin.matches("[0-9]")) {
+            this.totalPaladin = totalPaladin;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalWarlock() {
+    public String getTotalWarlock() {
         return totalWarlock;
     }
 
-    public void setTotalWarlock(int totalWarlock) {
-        this.totalWarlock = totalWarlock;
+    public void setTotalWarlock(String totalWarlock) {
+        if (totalWarlock.matches("[0-9]")) {
+            this.totalWarlock = totalWarlock;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalMonk() {
+    public String  getTotalMonk() {
         return totalMonk;
     }
 
-    public void setTotalMonk(int totalMonk) {
-        this.totalMonk = totalMonk;
+    public void setTotalMonk(String totalMonk) {
+        if (totalMonk.matches("[0-9]")) {
+            this.totalMonk = totalMonk;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalBard() {
+    public String  getTotalBard() {
         return totalBard;
     }
 
-    public void setTotalBard(int totalBard) {
-        this.totalBard = totalBard;
+    public void setTotalBard(String  totalBard) {
+        if (totalBard.matches("[0-9]")) {
+            this.totalBard = totalBard;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalSorcerer() {
+    public String  getTotalSorcerer() {
         return totalSorcerer;
     }
 
-    public void setTotalSorcerer(int totalSorcerer) {
-        this.totalSorcerer = totalSorcerer;
+    public void setTotalSorcerer(String  totalSorcerer) {
+        if (totalSorcerer.matches("[0-9]")) {
+            this.totalSorcerer = totalSorcerer;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 
-    public int getTotalDruid() {
+    public String getTotalDruid() {
         return totalDruid;
     }
 
-    public void setTotalDruid(int totalDruid) {
-        this.totalDruid = totalDruid;
+    public void setTotalDruid(String  totalDruid) {
+        if (totalDruid.matches("[0-9]")) {
+            this.totalDruid = totalDruid;
+        }
+        else{
+            throw new IllegalArgumentException("Input must only be an Integer!");
+        }
+
     }
 }

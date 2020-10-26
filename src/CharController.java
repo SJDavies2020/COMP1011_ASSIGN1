@@ -1,4 +1,5 @@
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,7 +15,7 @@ public class CharController implements Initializable {
     private URL location;
 
     @FXML
-    private TextField raceID;
+    private TextField raceName;
 
     @FXML
     private TextField totalFighters;
@@ -49,12 +50,37 @@ public class CharController implements Initializable {
     @FXML
     private TextField totalDruids;
 
+    @FXML
+    private TextField totalSorcerers;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-
+    public void createNewCharacter()
+    {
+        try{
+            Charmodel newRace = new Charmodel(
+                    raceName.getText(),
+                    totalFighters.getText(),
+                    totalRogues.getText(),
+                    totalWizards.getText(),
+                    totalBarbarians.getText(),
+                    totalClerics.getText(),
+                    totalRangers.getText(),
+                    totalPaladins.getText(),
+                    totalWarlocks.getText(),
+                    totalMonks.getText(),
+                    totalBards.getText(),
+                    totalSorcerers.getText(),
+                    totalDruids.getText());
+            System.out.println("The New Race ID is: " + newRace.getRaceID());
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 
 }

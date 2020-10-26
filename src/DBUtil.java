@@ -27,56 +27,55 @@ public static int insertNewCharacterRace(Charmodel newCharacterRace) throws SQLE
 
         ps = conn.prepareStatement(sql, new String [] {"raceID"});
 
-
         // 4 Bind the Values
 
         ps.setString(1, newCharacterRace.getCharRace());
         ps.setString(2, "FIGHTER");
-        ps.setInt(3, newCharacterRace.getTotalFighter());
+        ps.setInt(3, Integer.parseInt(newCharacterRace.getTotalFighter()));
 
         ps.setString(4, newCharacterRace.getCharRace());
         ps.setString(5, "ROGUE");
-        ps.setInt(6, newCharacterRace.getTotalRogue());
+        ps.setInt(6, Integer.parseInt(newCharacterRace.getTotalRogue()));
 
         ps.setString(7, newCharacterRace.getCharRace());
         ps.setString(8, "WIZARD");
-        ps.setInt(9, newCharacterRace.getTotalWizard());
+        ps.setInt(9, Integer.parseInt(newCharacterRace.getTotalWizard()));
 
         ps.setString(10, newCharacterRace.getCharRace());
         ps.setString(11, "BARBARIAN");
-        ps.setInt(12, newCharacterRace.getTotalBarbarian());
+        ps.setInt(12, Integer.parseInt(newCharacterRace.getTotalBarbarian()));
 
         ps.setString(13, newCharacterRace.getCharRace());
         ps.setString(14, "CLERIC");
-        ps.setInt(15, newCharacterRace.getTotalCleric());
+        ps.setInt(15, Integer.parseInt(newCharacterRace.getTotalCleric()));
 
         ps.setString(16, newCharacterRace.getCharRace());
         ps.setString(17, "RANGER");
-        ps.setInt(18, newCharacterRace.getTotalRanger());
+        ps.setInt(18, Integer.parseInt(newCharacterRace.getTotalRanger()));
 
         ps.setString(19, newCharacterRace.getCharRace());
         ps.setString(20, "PALADIN");
-        ps.setInt(21, newCharacterRace.getTotalPaladin());
+        ps.setInt(21, Integer.parseInt(newCharacterRace.getTotalPaladin()));
 
         ps.setString(22, newCharacterRace.getCharRace());
         ps.setString(23, "WARLOCK");
-        ps.setInt(24, newCharacterRace.getTotalWarlock());
+        ps.setInt(24, Integer.parseInt(newCharacterRace.getTotalWarlock()));
 
         ps.setString(25, newCharacterRace.getCharRace());
         ps.setString(26, "MONK");
-        ps.setInt(27, newCharacterRace.getTotalMonk());
+        ps.setInt(27, Integer.parseInt(newCharacterRace.getTotalMonk()));
 
         ps.setString(28, newCharacterRace.getCharRace());
         ps.setString(29, "BARD");
-        ps.setInt(30, newCharacterRace.getTotalBard());
+        ps.setInt(30, Integer.parseInt(newCharacterRace.getTotalBard()));
 
         ps.setString(31, newCharacterRace.getCharRace());
         ps.setString(32, "SORCERER");
-        ps.setInt(33, newCharacterRace.getTotalSorcerer());
+        ps.setInt(33, Integer.parseInt(newCharacterRace.getTotalSorcerer()));
 
         ps.setString(34, newCharacterRace.getCharRace());
         ps.setString(35, "DRUID");
-        ps.setInt(36, newCharacterRace.getTotalDruid());
+        ps.setInt(36, Integer.parseInt(newCharacterRace.getTotalDruid()));
 
         // 5 execute the SQL and write to the DB
 
