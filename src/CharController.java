@@ -105,7 +105,8 @@ public class CharController implements Initializable {
     }
 
     @FXML
-    private void viewAllPatients(ActionEvent event) throws IOException {
+    private void viewAllCharacters(ActionEvent event) throws IOException {
+        // SceneChanger.changeScene(event,"viewCharTable.fxml","Character Statistics");
         changeScene(event,"viewCharTable.fxml","Character Statistics");
     }
 

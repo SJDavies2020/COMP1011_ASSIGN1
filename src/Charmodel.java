@@ -77,14 +77,12 @@ public Charmodel(String chrRac, String totFighter, String totRogue, String totWi
     raceID = DBUtil.insertNewCharacterRace(this);
 
 }
-
     public int getRaceID() {
         return raceID;
     }
 
-    public void setRaceID(int raceID) {
-
-        this.raceID = raceID;
+    public void setRaceID(int racID) {
+        this.raceID = racID;
     }
 
     public String getCharRace() {return charRace;
