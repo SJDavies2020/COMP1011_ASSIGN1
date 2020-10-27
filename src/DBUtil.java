@@ -7,7 +7,7 @@ public class DBUtil {
 private static String user="stevendavies";
 private static String password="Bonnied029$";
 
-public static int insertNewCharacterRace(Charmodel newCharacterRace) throws SQLException {
+public static int insertNewCharacterRace(CharModel newCharacterRace) throws SQLException {
 
     Connection conn = null;
     PreparedStatement ps = null;
@@ -115,9 +115,9 @@ public static int insertNewCharacterRace(Charmodel newCharacterRace) throws SQLE
 
 }
 
-public static ArrayList<Charmodel> getAllCharInfo() throws SQLException {
+public static ArrayList<CharModel> getAllCharInfo() throws SQLException {
 
-    ArrayList<Charmodel> charactersStats = new ArrayList<>();
+    ArrayList<CharModel> charactersStats = new ArrayList<>();
 
     Connection conn = null;
     Statement statement = null;
@@ -154,7 +154,7 @@ public static ArrayList<Charmodel> getAllCharInfo() throws SQLException {
                 arrlist.add(resultSet.getString(String.valueOf("number")));
                 resultSet.next();
             }
-            Charmodel newCharCharacter = new Charmodel(Integer.parseInt(arrlist.get(0)), arrlist.get(1) , arrlist.get(2), arrlist.get(3), arrlist.get(4), arrlist.get(5), arrlist.get(6), arrlist.get(7), arrlist.get(8), arrlist.get(9), arrlist.get(10), arrlist.get(11), arrlist.get(12),arrlist.get(13));
+            CharModel newCharCharacter = new CharModel(Integer.parseInt(arrlist.get(0)), arrlist.get(1) , arrlist.get(2), arrlist.get(3), arrlist.get(4), arrlist.get(5), arrlist.get(6), arrlist.get(7), arrlist.get(8), arrlist.get(9), arrlist.get(10), arrlist.get(11), arrlist.get(12),arrlist.get(13));
             charactersStats.add(newCharCharacter);
         }
 

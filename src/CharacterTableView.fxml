@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="617.0" prefWidth="1054.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CharacterTableViewController">
+   <children>
+      <TableView fx:id="tableView" layoutX="33.0" layoutY="86.0" prefHeight="432.0" prefWidth="989.0">
+        <columns>
+          <TableColumn fx:id="race" prefWidth="138.0" text="RACE" />
+          <TableColumn fx:id="fighter" prefWidth="62.0" text="FIGHTER" />
+            <TableColumn fx:id="rogue" prefWidth="51.0" text="ROGUE" />
+            <TableColumn fx:id="wizard" prefWidth="61.0" text="WIZARD" />
+            <TableColumn fx:id="barbarian" text="BARBARIAN" />
+            <TableColumn fx:id="cleric" prefWidth="64.0" text="CLERIC" />
+            <TableColumn fx:id="ranger" prefWidth="82.0" text="RANGER" />
+            <TableColumn fx:id="paladin" prefWidth="71.0" text="PALADIN" />
+            <TableColumn fx:id="warlock" prefWidth="82.0" text="WARLOCK" />
+            <TableColumn fx:id="bard" prefWidth="68.0" text="BARD" />
+            <TableColumn fx:id="sorcerer" prefWidth="85.0" text="SORCERER" />
+            <TableColumn fx:id="druid" prefWidth="56.0" text="DRUID" />
+            <TableColumn fx:id="monk" prefWidth="88.0" text="MONK" />
+        </columns>
+      </TableView>
+      <Button layoutX="898.0" layoutY="541.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="124.0" text="Add New Race" />
+      <Label fx:id="" alignment="CENTER" layoutX="200.0" layoutY="26.0" prefHeight="51.0" prefWidth="525.0" text="D&amp;D 5E Character Statistics">
+         <font>
+            <Font name="Bell MT" size="42.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

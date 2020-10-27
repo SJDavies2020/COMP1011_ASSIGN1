@@ -5,17 +5,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 
 public class Main extends Application {
     public static void main(String[] args){
 
        /* try {
-            ArrayList<Charmodel> characters = DBUtil.getAllCharInfo();
+            ArrayList<CharModel> characters = DBUtil.getAllCharInfo();
 
-            for(Charmodel character: characters)
+            for(CharModel character: characters)
             {
                 System.out.println(character);
             }
@@ -29,7 +27,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("newCharview.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("CharModelView.fxml"));
         primaryStage.setScene(new Scene(root,  960, 540));
         primaryStage.setTitle("Character Race Builder");
         primaryStage.setResizable(false);

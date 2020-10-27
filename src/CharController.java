@@ -10,14 +10,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.io.IOException;
 
 public class CharController implements Initializable {
 
@@ -82,7 +78,7 @@ public class CharController implements Initializable {
     public void createNewCharacter()
     {
         try{
-            Charmodel newRace = new Charmodel(
+            CharModel newRace = new CharModel(
                     raceName.getText(),
                     totalFighters.getText(),
                     totalRogues.getText(),
@@ -106,8 +102,8 @@ public class CharController implements Initializable {
 
     @FXML
     private void viewAllCharacters(ActionEvent event) throws IOException {
-        // SceneChanger.changeScene(event,"viewCharTable.fxml","Character Statistics");
-        changeScene(event,"viewCharTable.fxml","Character Statistics");
+        // SceneChanger.changeScene(event,"CharacterTableView.fxml","Character Statistics");
+        changeScene(event, "CharacterTableView.fxml","Character Statistics");
     }
 
     public static void changeScene(ActionEvent event,String viewName, String title) throws IOException {

@@ -1,7 +1,6 @@
 import java.sql.SQLException;
-import org.apache.commons.lang3.*;
 
-public class Charmodel {
+public class CharModel {
 
     private int raceID;
     private String charRace;
@@ -19,7 +18,7 @@ public class Charmodel {
     private String totalDruid;
 
 
-    public Charmodel(int raceID, String charRace, String totalFighter, String totalRogue, String totalWizard, String totalBarbarian, String totalCleric, String totalRanger, String totalPaladin, String totalWarlock, String totalMonk, String totalBard, String totalSorcerer, String totalDruid) {
+    public CharModel(int raceID, String charRace, String totalFighter, String totalRogue, String totalWizard, String totalBarbarian, String totalCleric, String totalRanger, String totalPaladin, String totalWarlock, String totalMonk, String totalBard, String totalSorcerer, String totalDruid) {
 
         setRaceID(raceID);
         setCharRace(charRace);
@@ -58,7 +57,7 @@ public class Charmodel {
 
 
 
-public Charmodel(String chrRac, String totFighter, String totRogue, String totWizard, String totBarbarian, String totCleric, String totRanger,String totPaladin, String totWarlock, String totMonk, String totBard, String totSorcerer, String totDruid) throws SQLException {
+public CharModel(String chrRac, String totFighter, String totRogue, String totWizard, String totBarbarian, String totCleric, String totRanger, String totPaladin, String totWarlock, String totMonk, String totBard, String totSorcerer, String totDruid) throws SQLException {
 
     setCharRace(chrRac);
     setTotalFighter(totFighter);
