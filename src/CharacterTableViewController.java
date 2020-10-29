@@ -15,7 +15,7 @@ public class CharacterTableViewController implements Initializable {
         private TableView <CharModel> tableView;
 
         @FXML
-        private TableColumn<CharModel, Integer> race;
+        private TableColumn<CharModel, String> race;
 
         @FXML
         private TableColumn<CharModel, String> fighter;
@@ -59,7 +59,7 @@ public class CharacterTableViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-            race.setCellValueFactory(new PropertyValueFactory<CharModel,Integer>("raceID"));
+            race.setCellValueFactory(new PropertyValueFactory<CharModel,String>("charRace"));
             fighter.setCellValueFactory(new PropertyValueFactory<CharModel,String>("totalFighter"));
             rogue.setCellValueFactory(new PropertyValueFactory<CharModel,String>("totalRogue"));
             wizard.setCellValueFactory(new PropertyValueFactory<CharModel,String>("totalWizard"));

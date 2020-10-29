@@ -6,6 +6,10 @@
     -fx-background-image:url('./assets/chaosium-background-the-library.png');
 }
 
+.anchor1 {
+    -fx-background-image:url('./assets/1868702.jpg');
+}
+
 .gridPane
 {
     -fx-background-color: rgba(119,136,153,.7);
@@ -13,10 +17,15 @@
 
 .title
 {
-    -fx-text-fill: yellow;
+    -fx-text-fill: black;
 }
 
 .button
 {
     -fx-border-radius: 10px;
+}
+
+.columnColor
+{
+    -fx-text-fill: black;
 }
