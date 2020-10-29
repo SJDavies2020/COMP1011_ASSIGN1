@@ -13,12 +13,12 @@
    <children>
       <VBox layoutX="29.0" layoutY="45.0" prefHeight="543.0" prefWidth="743.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="45.0">
          <children>
-            <BarChart fx:id="barChart1" prefHeight="498.0" prefWidth="743.0">
+            <BarChart fx:id="barChart1" prefHeight="492.0" prefWidth="743.0">
               <xAxis>
-                <CategoryAxis fx:id="ClassAxis" label="Character Class" side="BOTTOM" />
+                <CategoryAxis fx:id="ClassAxis" label="Character Class" side="BOTTOM" tickLabelFill="#21d327" />
               </xAxis>
               <yAxis>
-                <NumberAxis fx:id="totalCharAxis" label="Total Number of Times Chosen" side="LEFT" />
+                <NumberAxis fx:id="totalCharAxis" label="Total Number of Times Chosen" side="LEFT" tickLabelFill="#10ab25" />
               </yAxis>
             </BarChart>
          </children>
