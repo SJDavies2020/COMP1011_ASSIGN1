@@ -9,21 +9,15 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     public static void main(String[] args){
-
-       /* try {
-            ArrayList<CharModel> characters = DBUtil.getAllCharInfo();
-
-            for(CharModel character: characters)
-            {
-                System.out.println(character);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
-
         launch(args);
     }
+
+    /**
+     *
+     * @param primaryStage
+     * @throws Exception
+     * Open the orginal Scene and
+     */
 
     @Override
     public void start(Stage primaryStage) throws Exception{

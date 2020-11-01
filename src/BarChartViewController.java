@@ -4,7 +4,6 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import jdk.nashorn.internal.parser.JSONParser;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -13,6 +12,9 @@ import java.util.ResourceBundle;
 
 public class BarChartViewController implements Initializable
 {
+    /**
+     * FXML Definiton to Link the Scene info
+     */
 
     @FXML
     private BarChart<?, ?> barChart1;
@@ -28,6 +30,10 @@ public class BarChartViewController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        /**
+         * Variable Difintion to store the results from the calculated values
+         */
+
         int totalFighter = 0;
         int totalRogue = 0;
         int totalWizard =0 ;
@@ -42,9 +48,18 @@ public class BarChartViewController implements Initializable
         int totalDruid = 0;
 
        try {
-           ArrayList<CharModel> charactersStats = new ArrayList<>(DBUtil.getAllCharInfo());
 
+           /**
+            * Get the Database Table Via the DBUtil Class
+            *
+            */
+
+           ArrayList<CharModel> charactersStats = new ArrayList<>(DBUtil.getAllCharInfo());
            System.out.println(charactersStats);
+
+           /**
+            * Iterate thru the Ret Database Table
+            */
 
            for (int i = 0; i < charactersStats.size(); i++) {
                totalFighter += Integer.parseInt(charactersStats.get(i).getTotalFighter());
@@ -64,6 +79,11 @@ public class BarChartViewController implements Initializable
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        /**
+         * Define the Bar Chart and Add the Total Values to the Chart
+         */
+
         maxChoice = new XYChart.Series();
 
         maxChoice.getData().add(new XYChart.Data("Fighter",totalFighter));

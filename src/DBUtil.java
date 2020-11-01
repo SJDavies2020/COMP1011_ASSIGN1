@@ -3,11 +3,19 @@ import java.util.ArrayList;
 import java.sql.ResultSet;
 
 public class DBUtil {
-// User Name and Password
-private static String user="stevendavies";
+
+    /**
+     *  USername and PW for Databse
+     */
+
+    private static String user="stevendavies";
 private static String password="Bonnied029$";
 
 public static int insertNewCharacterRace(CharModel newCharacterRace) throws SQLException {
+
+    /**
+     * Define the Database Conn
+     */
 
     Connection conn = null;
     PreparedStatement ps = null;
@@ -115,6 +123,13 @@ public static int insertNewCharacterRace(CharModel newCharacterRace) throws SQLE
 
 }
 
+    /**
+     * Get the Table from the DB Database
+     * Store each Charmodel Object in an Array List
+     * @return
+     * @throws SQLException
+     */
+
 public static ArrayList<CharModel> getAllCharInfo() throws SQLException {
 
     ArrayList<CharModel> charactersStats = new ArrayList<>();
@@ -179,6 +194,13 @@ public static ArrayList<CharModel> getAllCharInfo() throws SQLException {
         return charactersStats;
     }
 }
+
+    /**
+     * Calculate the Rows in the Table
+     * @param res
+     * @return
+     */
+
     public static int getRows(ResultSet res){
         int totalRows = 0;
         try {

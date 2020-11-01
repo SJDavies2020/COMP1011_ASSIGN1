@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 
 public class CharController implements Initializable {
 
-
     @FXML
     private ResourceBundle resources;
 
@@ -99,22 +98,20 @@ public class CharController implements Initializable {
             msgArea.setText(e.toString());
         }
     }
+
+    /**
+     * Load the Alternate Scene (Bar Chart)
+     * @param event
+     * @throws IOException
+     */
+
     @FXML
     private void viewAllCharacters(ActionEvent event) throws IOException {
-        // SceneChanger.changeScene(event,"CharacterTableView.fxml","Character Statistics");
-       SceneChanger.changeScene(event, "BarChartView.fxml","Character Statistics");
+       SceneChanger.changeScene(event,"CharacterTableView.fxml","Character Statistics");
     }
 
-//    public static void changeScene(ActionEvent event,String viewName, String title) throws IOException {
-//            FXMLLoader loader = new FXMLLoader();
-//            loader.setLocation(new Object(){}.getClass().getResource(viewName));
-//            Parent root = loader.load();
-//            Scene scene = new Scene(root);
-//            scene.getStylesheets().add("styles.css");
-//            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//            stage.setScene(scene);
-//            stage.setTitle(title);
-//            stage.show();
-//        }
-
+    @FXML
+    private void viewClassChart(ActionEvent event) throws IOException {
+        SceneChanger.changeScene(event, "BarChartView.fxml","Character Statistics");
+    }
 }

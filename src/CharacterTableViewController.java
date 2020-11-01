@@ -1,3 +1,4 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -5,9 +6,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+/**
+ * FXML Definiton to Link the Scene info
+ */
 
 public class CharacterTableViewController implements Initializable {
 
@@ -56,9 +62,16 @@ public class CharacterTableViewController implements Initializable {
         @FXML
         private Label lblHeader;
 
+        /**
+         * Define the information for the Table and retrieve the Data using DBUtil Class
+          * @param url
+         * @param resourceBundle
+         */
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
+
             race.setCellValueFactory(new PropertyValueFactory<CharModel,String>("charRace"));
             fighter.setCellValueFactory(new PropertyValueFactory<CharModel,String>("totalFighter"));
             rogue.setCellValueFactory(new PropertyValueFactory<CharModel,String>("totalRogue"));
@@ -79,6 +92,10 @@ public class CharacterTableViewController implements Initializable {
                     e.printStackTrace();
             }
     }
+        @FXML
+        public void viewClassChart(ActionEvent event) throws IOException {
+        SceneChanger.changeScene(event, "CharModelView.fxml","Character Race Builder");
+}
 }
 
 

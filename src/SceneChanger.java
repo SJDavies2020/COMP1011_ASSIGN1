@@ -8,6 +8,15 @@ import java.io.IOException;
 
 class SceneChanger {
 
+    /**
+     *
+     * @param event
+     * @param viewName
+     * @param title
+     * @throws IOException
+     * Class to change the Scene
+     */
+
     public static void changeScene(ActionEvent event,String viewName, String title) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(new Object(){}.getClass().getResource(viewName));

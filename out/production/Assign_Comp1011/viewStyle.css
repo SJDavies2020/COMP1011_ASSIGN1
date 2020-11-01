@@ -17,7 +17,7 @@
 
 .title
 {
-    -fx-text-fill: black;
+    -fx-text-fill: green;
 }
 
 .button
@@ -27,5 +27,12 @@
 
 .columnColor
 {
+    -fx-text-fill: black;
+}
+
+.buttonStyle
+{
+    -fx-background-color: green;
+    -fx-background-radius: 15px;
     -fx-text-fill: black;
 }
